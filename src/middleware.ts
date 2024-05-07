@@ -24,8 +24,10 @@ export const AFTERS: Middleware<AfterContext>[] = [
 export const ERRORS: Middleware<ErrorContext>[] = [
   async (ctx, next) => {
     await next();
-    ctx.message = ctx.error.message;
-    throw ctx.error;
+    if (ctx.error) {
+      ctx.message = ctx.error.message;
+      throw ctx.error;
+    }
   },
 ];
 

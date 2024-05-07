@@ -1,5 +1,5 @@
 import type { AfterPatch, BeforeContext, BeforePatch, Requester } from "./types";
-import { nativeFetchRequester } from "./requester";
+import { nativeFetchRequester, nuxtFetchRequester, uniappRequester } from "./requester";
 import { currying } from "./wrapper";
 import { createContext } from "./context";
 
@@ -60,6 +60,6 @@ export function create<B extends BeforePatch, A extends AfterPatch>(requester: t
 
 export const createByNativeFetch = create(nativeFetchRequester);
 
-// export const createUniappAPI = createAPI(uniappRequester);
+// export const createUniappAPI = create(uniappRequester);
 
-// export const createNuxtFetchAPI = createAPI(nuxtFetchRequester);
+// export const createNuxtFetchAPI = create(nuxtFetchRequester);

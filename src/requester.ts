@@ -178,7 +178,7 @@ export const uniappRequester = defineRequester(
     });
 
     return {
-      data: response.data,
+      data: response.data as any,
       status: response.statusCode,
       message: response.errMsg || "OK",
       response,
