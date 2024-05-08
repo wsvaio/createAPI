@@ -1,5 +1,5 @@
 import type { AfterPatch, BeforeContext, BeforePatch, Requester } from "./types";
-import { nativeFetchRequester, nuxtFetchRequester, uniappRequester } from "./requester";
+import { nativeFetchRequester } from "./requester";
 import { currying } from "./wrapper";
 import { createContext } from "./context";
 

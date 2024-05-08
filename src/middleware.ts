@@ -23,6 +23,7 @@ export const AFTERS: Middleware<AfterContext>[] = [
 
 export const ERRORS: Middleware<ErrorContext>[] = [
   async (ctx, next) => {
+    ctx.message = ctx.error.message;
     await next();
     if (ctx.error) {
       ctx.message = ctx.error.message;
