@@ -26,14 +26,14 @@ export function getFullPath<
 >({ query = {}, param = {}, path, body = {} }: T) {
   let fullPath = path;
 
-  fullPath.match(/:[\w_][\w\d_]*\??/gims)?.forEach(matched => {
+  fullPath.match(/:[\w_][\w\d_]*\??/gim)?.forEach(matched => {
     const key = matched.slice(1, matched.length - (matched.endsWith("?") ? 1 : 0));
     const val = param[key] || body?.[key] || query[key] || "";
     if (!val && !matched.endsWith("?"))
       return;
     fullPath = fullPath.replace(matched, val);
   });
-  fullPath = fullPath.replace(/\/+/gims, "/");
+  fullPath = fullPath.replace(/\/+/gim, "/");
 
   fullPath += fullPath.includes("?") ? "&" : "?";
   Object.entries<any>(query).forEach(([k, v]) =>

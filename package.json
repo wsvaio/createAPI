@@ -40,10 +40,10 @@
   },
   "scripts": {
     "dev": "vite ./playground",
-    "commit": "bun docs:build && git add docs && czg",
-    "docs:build": "bun typedoc",
+    "commit": "pnpm docs:build && git add docs && czg",
+    "docs:build": "pnpm typedoc",
     "build": "tsup",
-    "prepublishOnly": "bun run build",
+    "prepublishOnly": "pnpm run build",
     "log": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "lint:eslint": "eslint --cache --max-warnings 0  \"{src,mock}/**/*.{vue,ts,tsx}\" --fix",
     "lint:prettier": "prettier --write  \"src/**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
